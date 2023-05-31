@@ -24,15 +24,19 @@ const datos = {
   
 localStorage.setItem('calculos', JSON.stringify(datos))
 
-localStorage.setItem('Presupuesto', Presupuesto)
-console.log(Presupuesto)
+// localStorage.setItem('Presupuesto', Presupuesto)
+// console.log(Presupuesto)
 
 
 //ACCION DE VER EL LOCAL SOTORAGE
+ btnGastos.addEventListener('click', () => {
+  let Presupuesto = localStorage.getItem('Presupuesto')
+ })
+
 btnGastos.addEventListener('click', () => {
   let Presupuesto = localStorage.getItem('Presupuesto')
+  console.log(Presupuesto)
 })
-
 
 
 
