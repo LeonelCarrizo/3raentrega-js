@@ -9,10 +9,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <!-- Compilado y minificadp JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    
   
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+ 
   </head>
   <body>
     
@@ -21,13 +21,13 @@
     </nav>
 
     <div class="main">
-      <form id="calculos">
+      <form class="formulario__inputs" id="calculos">
         <input type="date" placeholder="Fecha de hoy" id="Fechadehoy" required />
-        <input type="number" placeholder="Presupuesto del dia" id="Presupuesto" required />
-        <input type="number" placeholder="Gustos" id="Gustos" required />
-        <input type="number" placeholder="Transporte " id="Transporte" required />
-        <input type="number" placeholder="Alimento" id="Alimento" required />
-        <input type="submit" value="Calcular" class="btn red z-depth-4" />
+        <input class="formulario__inputs"  type="number" placeholder="Presupuesto del dia" id="Presupuesto" required />
+        <input class="formulario__inputs"  type="number" placeholder="Gustos" id="Gustos" required />
+        <input class="formulario__inputs"  type="number" placeholder="Transporte " id="Transporte" required />
+        <input class="formulario__inputs"  type="number" placeholder="Alimento" id="Alimento" required />
+        <input  type="submit" value="Calcular" class="btn red z-depth-4" />
       </form>
       <button id="btnGastos">
         Ver gastos anteriores
@@ -42,10 +42,14 @@
         <h5><i class="fas fa-money-bill-wave-alt"></i></h5>  
       </div>
       
-      <div class="data">
-        <div class="result" id="result"></div>
-      </div>
-    </div>
+      <section class="simulador__result disable" id="resultadoContainer">
+        <div class="resultados" ></div>
+        <div id="simulador__result-actions">
+          <p>Desea calcular otro dia?</p>
+            <button id="btnSi">Si</button><button id="btnNo">No</button>
+        </div>
+      
+    </section>
 
 
 

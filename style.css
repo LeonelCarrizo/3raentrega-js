@@ -26,53 +26,38 @@
     color: #110808;
     border-radius: 20px;
   }
-  form input::placeholder {
-    width: 15em;
-    margin: 3px;
-    height: 2em;
-    color: #030304;
-  }
-  form .btn {
-    margin: 2em 1em;
-    width: 60%;
-    height: 40px;
-    text-transform: uppercase;
-    color: #d8c7c7;
-    letter-spacing: 2px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-  }
 
-  .icons {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1em;
-  
-  }
-  .fas {
-    font-size: 2.5em;  
-    border-radius: 50%;
-    padding: 40px;
-  
-  }
-  .fa-plane {
-    color: #292a2a;
-  }
-  .fa-wallet {
-    color: #a96d65;
-  }
-  .fa-money-bill-wave-alt{
-    color: #42a3b8;
-  }
-  
-  .container-data {
-    display: flex;
-    justify-content: space-around;
-    margin-top: -1em;
-  }
-  
-  .container-data h6 {
-    text-align: center;
-  }
+
+
+
+
+  .disable{
+    display: none !important;
+
+}.simulador__result{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: rgb(54, 255, 54);
+  margin-top: 2rem;
+  border-radius: 5px;
+  gap: .5rem;
+  text-align: center;
+  color: #000000;
+}
+
+.simulador__result-actions button{
+  outline: none;
+  border: none;
+  padding: .5rem;
+  border-radius: 5px;
+  width: 70px;
+  margin-right: 2rem;
+  background-color: #000;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.simulador__result-actions button:last-of-type{
+  margin-right: 0rem
+}
