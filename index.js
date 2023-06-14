@@ -8,6 +8,8 @@
   const resultadoContainer = document.getElementById('resultadoContainer');
   const resultado = document.getElementById('resultado');
   const inputsCalculos = document.querySelectorAll('formulario__inputs');
+  const bntSi = document.getElementById('bntSi');
+  const btnNo = document.getElementById('btnNo');
   
 
   let validar = false
@@ -19,16 +21,29 @@ calculos.addEventListener('submit', (event) => {
 })
 
 function calcularDia () {
-  const gustos = gustosInput.Value
+  const gustos = gustosInput.value
   const transporte = transporteInput.value
   const alimento = alimentoInput.value
 
-  const gastosDia = (Math.round(parseInt(gustos) - parseInt(transporte) - parseInt(alimento))).toFixed(2).replace('.' , ',');
+  console.log(gustos);
+  console.log(transporte);
+  console.log(alimento);
+
+  const subtotal = parseInt(presupuestoInput.value) - parseInt(gustos) - parseInt(transporte) - parseInt(alimento)
+
+  
 
   resultadoContainer.classList.remove('disable');
-  resultado.innerText = gastosDia
+  resultado.innerText = `Total disponible: $${subtotal}`
 
 }
+
+//PANTALLA VERDE
+
+bntSi.addEventListener('click', () => {
+  calculos.reset()
+  
+})
   
 
 
