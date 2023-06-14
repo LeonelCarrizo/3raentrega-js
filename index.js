@@ -1,15 +1,17 @@
   const calculosInput = document.getElementById('calculos');
-  const fechadehoyInput = document.getElementById('Fechadehoy');
+  const fechaHoyInput = document.getElementById('FechaHoy');
   const presupuestoInput = document.getElementById('Presupuesto');
   const gustosInput = document.getElementById('Gustos');
   const transporteInput = document.getElementById('Transporte');
   const alimentoInput = document.getElementById('Alimento');
-  const btnGastos = document.getElementById('btnGastos');
   const resultadoContainer = document.getElementById('resultadoContainer');
   const resultado = document.getElementById('resultado');
   const inputsCalculos = document.querySelectorAll('formulario__inputs');
-  const bntSi = document.getElementById('bntSi');
+  const btnSi = document.getElementById('btnSi');
   const btnNo = document.getElementById('btnNo');
+  const btnCalcular = document.getElementById('btnCalcular');
+  const btnGastos = document.getElementById('btnGastos');
+  const btnBorrar = document.getElementById('btnBorrar')
   
 
   let validar = false
@@ -40,10 +42,46 @@ function calcularDia () {
 
 //PANTALLA VERDE
 
-bntSi.addEventListener('click', () => {
+btnSi.addEventListener('click', () => {
   calculos.reset()
+  resultadoContainer.classList.add('disable')
+   btnCalcular.classList.add('buttonDisable')
   
 })
-  
 
+btnNo.addEventListener('click', () => {
+swal({
+  title: "Un placer",
+  text: "Nos encanta ayudarlo con su ecocnomia diaria!",
+  icon: "success",
+  button: "Volver al Inicio!",
+});
+ calculos.reset()
+  resultadoContainer.classList.add('disable')
+   btnCalcular.classList.add('buttonDisable')
+
+})
+  
+localStorage.setItem('fechaHoyInput', fechaHoyInput)
+localStorage.setItem('presupuestoInput', presupuestoInput)
+localStorage.setItem('gustosInput', gustosInput)
+localStorage.setItem('transporteInput', transporteInput)
+localStorage.setItem('alimentoInput', alimentoInput)
+
+
+//ACCION LOCAL STORAGE
+btnGastos.addEventListener('click', () => {
+  let fecha = localStorage.getItem(fechaHoyInput)
+  let presupuesto = localStorage.getItem(presupuestoInput)
+  let gustos = localStorage.getItem(gustosInput)
+  let transporte = localStorage.getItem(transporteInput)
+  let alimento = localStorage.getItem(alimentoInput)
+  console.log(presupuestoInput)
+
+})
+
+// btnBorrar.addEventListener('change', () => {
+//   localStorage.clear()
+//   alert("se han borrado")
+// })
 

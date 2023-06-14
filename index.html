@@ -22,16 +22,17 @@
 
     <div class="main">
       <form class="formulario__inputs" id="calculos">
-        <input type="date" placeholder="Fecha de hoy" id="Fechadehoy" required />
+        <input type="date" placeholder="Fecha de hoy" id="FechaHoy" required />
         <input class="formulario__inputs"  type="number" placeholder="Presupuesto del dia" id="Presupuesto" required />
         <input class="formulario__inputs"  type="number" placeholder="Gustos" id="Gustos" required />
         <input class="formulario__inputs"  type="number" placeholder="Transporte " id="Transporte" required />
         <input class="formulario__inputs"  type="number" placeholder="Alimento" id="Alimento" required />
-        <input  type="submit" value="Calcular" class="btn red z-depth-" />
+        <input  type="submit" value="Calcular" class="btn red z-depth-" id="btnCalcular"/>
       </form>
       <button id="btnGastos">
         Ver gastos anteriores
         </button>
+        <button id="btnBorrar">Borrar todo</button>
     </div>
 
 
@@ -54,6 +55,7 @@
 
 
     <script src="index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>
 
