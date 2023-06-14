@@ -23,14 +23,12 @@ function calcularDia () {
   const transporte = transporteInput.value
   const alimento = alimentoInput.value
 
-  const gastosDia = (Math.round(gustos - transporte - alimento)).toFixed(2).replace('.' , ',');
+  const gastosDia = (Math.round(parseInt(gustos) - parseInt(transporte) - parseInt(alimento))).toFixed(2).replace('.' , ',');
 
   resultadoContainer.classList.remove('disable');
   resultado.innerText = gastosDia
 
 }
   
-// inputsCalculos.forEach(input => {
-//   console.log(input)
-// })
+
 
