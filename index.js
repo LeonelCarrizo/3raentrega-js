@@ -21,19 +21,15 @@
   const btnBorrar = document.getElementById('btnBorrar');
   const containerBorrar = document.getElementById("containerBorrar");
   const inputBorrar = document.getElementById("inputBorrar"); 
-  const containerDeCotizaciones = document.getElementById(
-    "containerDeCotizaciones"
+  const containerDeDias = document.getElementById(
+    "containerDeDias"
   );
-  
-  
-  
-
-  
   
 
   let validar = false;
   let validar2 = false;
-  let cotizaciones = [];
+  const arrayCalculos = [];
+  
 
 
 calculos.addEventListener('submit', (event) => {
@@ -44,12 +40,13 @@ calculos.addEventListener('submit', (event) => {
 
 
 function calcularDia () {
-  const presupuesto = presupuestoInput.value
-  const gustos = gustosInput.value
-  const transporte = transporteInput.value
-  const alimento = alimentoInput.value
+  const presupuesto = presupuestoInput.value;
+  const gustos = gustosInput.value;
+  const transporte = transporteInput.value;
+  const alimento = alimentoInput.value;
 
   
+  console.log(presupuesto);
   console.log(gustos);
   console.log(transporte);
   console.log(alimento);
@@ -61,10 +58,36 @@ function calcularDia () {
   resultadoContainer.classList.remove('disable');
   resultado.innerText = `Total disponible: $${subtotal}`
 
-  
 
 }
 
+const nuevoPresupuesto = {
+  FechaHoy: fechaHoyInput.value,
+  presupuesto: presupuestoInput.value,
+  gustos: gustosInput.value,
+  transporte: transporteInput.value,
+  alimento: alimentoInput.value,
+  
+}
+
+arrayCalculos.push(nuevoPresupuesto);
+localStorage.setItem("calculos", JSON.stringify(arrayCalculos));
+console.log()
+
+
+function mostrarHistorial() {
+  const historial = JSON.parse(localStorage.getItem('calculos'));
+
+
+historial.forEach( el => {
+  
+
+  containerDeDias.innerHTML = `<p>${el.FechaHoy} ${el.presupuestoInput} ${el.gustos} ${el.transporte} ${el.alimento} </p>`
+
+
+  historial.appendChild(containerDeDias);
+})
+}
 // //PANTALLA VERDE
 
 btnSi.addEventListener('click', () => {
@@ -73,6 +96,7 @@ btnSi.addEventListener('click', () => {
    btnCalcular.classList.add('buttonDisable')
   
 })
+
 
 btnNo.addEventListener('click', () => {
     ultimoFormulario.classList.remove("disable");
@@ -115,6 +139,7 @@ btnGastos.addEventListener('click', () => {
   let gustos = localStorage.getItem(gustosInput.value)
   let transporte = localStorage.getItem(transporteInput.value)
   let alimento = localStorage.getItem(alimentoInput.value)
+  
   console.log(fechaHoyInput.value, presupuestoInput.value, gustosInput.value, transporteInput.value, alimentoInput.value)
 
 })
@@ -122,4 +147,8 @@ btnGastos.addEventListener('click', () => {
 btnBorrar.addEventListener('change', () => {
   localStorage.clear()
   alert("se han borrado")
+})
+
+btnBorrarCalculos.addEventListener('click', () => {
+  
 })
